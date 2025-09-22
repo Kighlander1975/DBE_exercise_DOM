@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grußnachricht</title>
+    </head>
+    <body>
+        <div id="greeting"></div>
+
+        <script>
+            // Änderung der "var" in "const"
+            const greetingDiv = document.getElementById("greeting");
+            // Abrufen der aktuellen Uhrzeit
+            const now = new Date();
+            const hour = now.getHours();
+            console.log(now, hour);
+            // Festlegung der Begrüßung basierend auf der Uhrzeit
+            let greeting;
+            let guten = "<strong>Guten</strong>";
+            if (hour >= 5 && hour < 12) {
+                greeting = `${guten} Morgen!`;
+            } else if (hour >= 12 && hour < 18) {
+                greeting = `${guten} Tag!`;
+            } else {
+                greeting = `${guten} Abend!`;
+            }
+            greetingDiv.innerHTML = greeting;
+        </script>
+    </body>
+</html>
